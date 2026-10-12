@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101027">
+<title>Vishnupriya Salla | AI & ML Portfolio</title>
+<style>
+:root{--bg:#0c0c20;--panel:rgba(255,255,255,.075);--text:#f7f6ff;--muted:#b9b8d3;--pink:#ff5ca8;--cyan:#55e6ff;--purple:#a58bff;--line:rgba(255,255,255,.14);--shadow:0 24px 70px rgba(0,0,0,.28)}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(ellipse at 10% 0%,#292052 0,transparent 36%),radial-gradient(ellipse at 90% 15%,#123c53 0,transparent 28%),var(--bg);color:var(--text);line-height:1.65}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(12,12,32,.76);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px}
+.logo{font-weight:900;letter-spacing:.5px;font-size:1.2rem}.logo span{color:var(--cyan)}
+nav{display:flex;align-items:center;gap:22px}nav a{font-size:.92rem;color:var(--muted);transition:.2s}nav a:hover{color:var(--cyan)}
+.menu{display:none;background:none;border:1px solid var(--line);color:white;border-radius:10px;padding:8px 12px}
+.hero{min-height:83vh;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:60px;padding:72px 0}
+.eyebrow{display:inline-flex;gap:9px;align-items:center;padding:7px 13px;border:1px solid #ffffff25;background:#ffffff0c;border-radius:999px;color:#d8d5ff;font-size:.86rem}
+.dot{height:8px;width:8px;border-radius:50%;background:#65f4b6;box-shadow:0 0 16px #65f4b6}
+h1{font-size:clamp(2.7rem,6vw,5.3rem);line-height:1.04;letter-spacing:-3px;margin:22px 0}
+.gradient{background:linear-gradient(100deg,var(--cyan),var(--purple) 50%,var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:1.08rem;max-width:650px}
+.actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:13px;border:1px solid var(--line);font-weight:750;transition:transform .2s,box-shadow .2s;cursor:pointer}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 28px #0005}
+.primary{color:#101027;background:linear-gradient(100deg,var(--cyan),#b6a1ff);border:0}
+.secondary{background:#ffffff0b}
+.orbit-wrap{display:grid;place-items:center;position:relative;min-height:350px}
+.orbit{width:min(330px,75vw);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;position:relative;background:radial-gradient(circle at 35% 25%,#ffffff24,transparent 35%),linear-gradient(145deg,#55e6ff24,#a58bff20,#ff5ca81c);border:1px solid #ffffff28;box-shadow:inset 0 0 60px #a58bff14,0 0 80px #6b62ff16;animation:float 6s ease-in-out infinite}
+.orbit:before,.orbit:after{content:"";position:absolute;inset:18px;border:1px dashed #ffffff30;border-radius:50%;animation:spin 24s linear infinite}
+.orbit:after{inset:-18px;border-color:#55e6ff40;animation-direction:reverse;animation-duration:32s}
+.initials{font-size:5rem;font-weight:950;letter-spacing:-7px;background:linear-gradient(135deg,var(--cyan),var(--purple),var(--pink));color:transparent;background-clip:text}
+.float-tag{position:absolute;padding:9px 13px;border-radius:12px;background:#191934;border:1px solid var(--line);box-shadow:var(--shadow);font-weight:750;font-size:.9rem}
+.tag1{top:10%;right:0}.tag2{bottom:13%;left:-1%}.tag3{bottom:4%;right:4%}
+section{padding:76px 0;scroll-margin-top:70px}
+.section-head{margin-bottom:30px}.kicker{color:var(--cyan);font-weight:800;text-transform:uppercase;letter-spacing:2px;font-size:.76rem}
+h2{font-size:clamp(2rem,4vw,3rem);letter-spacing:-1px;margin:5px 0 10px}
+.section-intro{color:var(--muted);max-width:700px;margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:0 12px 35px #00000012;transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-5px);border-color:#55e6ff75}
+.card-icon{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:1.35rem;background:linear-gradient(135deg,#55e6ff25,#a58bff2c);border:1px solid #ffffff18}
+.card h3{margin:15px 0 7px;font-size:1.18rem}.card p{color:var(--muted);margin:0}
+.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.project{position:relative;overflow:hidden}.project:before{content:"";position:absolute;width:170px;height:170px;right:-70px;top:-70px;border-radius:50%;background:var(--glow,#55e6ff);filter:blur(70px);opacity:.2;pointer-events:none}
+.project-top{display:flex;justify-content:space-between;gap:12px;align-items:center}.project-number{font-size:.85rem;color:var(--cyan);font-weight:900}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.pill{font-size:.78rem;color:#e5e3ff;background:#ffffff0c;border:1px solid #ffffff18;padding:5px 9px;border-radius:999px}
+.skill-list{display:flex;flex-wrap:wrap;gap:11px}.skill{padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:#ffffff08;color:#e9e7ff;transition:.2s}.skill:hover{background:#55e6ff17;border-color:var(--cyan);transform:translateY(-2px)}
+.timeline{display:grid;gap:14px}.timeline-item{display:grid;grid-template-columns:150px 1fr;gap:22px;padding:20px 0;border-bottom:1px solid var(--line)}.timeline-date{color:var(--cyan);font-weight:800}.timeline-item h3{margin:0 0 5px}.timeline-item p{margin:0;color:var(--muted)}
+.contact-panel{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;background:linear-gradient(125deg,#55e6ff12,#a58bff13,#ff5ca812);border:1px solid var(--line);border-radius:26px;padding:clamp(24px,5vw,48px)}
+.contact-links{display:grid;gap:12px}.contact-link{padding:13px 15px;border-radius:12px;border:1px solid var(--line);background:#ffffff08;overflow-wrap:anywhere}.contact-link:hover{border-color:var(--cyan)}
+footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s,transform .65s}.reveal.visible{opacity:1;transform:none}
+#topBtn{position:fixed;bottom:20px;right:20px;z-index:10;border:1px solid var(--line);background:#242344;color:white;border-radius:50%;width:45px;height:45px;display:none;cursor:pointer;font-size:1.2rem}
+@keyframes float{50%{transform:translateY(-12px)}}@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:800px){.hero{grid-template-columns:1fr;gap:20px;padding-top:55px}.orbit-wrap{min-height:300px}.grid{grid-template-columns:repeat(2,1fr)}.contact-panel{grid-template-columns:1fr}nav{gap:12px}}
+@media(max-width:600px){.menu{display:block}nav{display:none;position:absolute;top:71px;left:0;right:0;padding:18px 4%;background:#11112b;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}nav.open{display:flex}.grid,.project-grid{grid-template-columns:1fr}.timeline-item{grid-template-columns:1fr;gap:3px}h1{letter-spacing:-1.8px}.hero{min-height:auto}.orbit-wrap{min-height:270px}section{padding:58px 0}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home">VS<span>.</span></a>
+    <button class="menu" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">☰ Menu</button>
+    <nav id="navLinks" aria-label="Main navigation">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="container hero" id="home">
+    <div class="reveal">
+      <div class="eyebrow"><span class="dot"></span> B.Tech Student · AI &amp; ML</div>
+      <h1>Hi, I'm<br><span class="gradient">Vishnupriya Salla</span></h1>
+      <p>I’m a Computer Science Engineering student interested in building practical software, AI-powered applications, automation solutions, and computer-vision features for real-world problems.</p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">Explore my work <span aria-hidden="true">↗</span></a>
+        <a class="btn secondary" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <div class="orbit-wrap reveal" aria-label="Decorative initials illustration">
+      <div class="orbit"><div class="initials">VS</div></div>
+      <div class="float-tag tag1">✦ Python</div><div class="float-tag tag2">⌘ AI &amp; ML</div><div class="float-tag tag3">✧ Web Dev</div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head reveal"><div class="kicker">A little about me</div><h2>Curious mind. <span class="gradient">Practical builder.</span></h2>
+      <p class="section-intro">I enjoy turning ideas into useful applications, learning new technologies, and collaborating to solve problems. My projects combine software development with real-world use cases.</p></div>
+      <div class="grid">
+        <article class="card reveal"><div class="card-icon">🧠</div><h3>AI &amp; Computer Vision</h3><p>Exploring object detection, OCR, and AI-based application workflows.</p></article>
+        <article class="card reveal"><div class="card-icon">💻</div><h3>Software Development</h3><p>Building with Python, Java, web technologies, and Flask.</p></article>
+        <article class="card reveal"><div class="card-icon">🤝</div><h3>Teamwork &amp; Growth</h3><p>Bringing problem-solving, adaptability, communication, and collaboration to new challenges.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-head reveal"><div class="kicker">My toolkit</div><h2>Skills &amp; technologies</h2><p class="section-intro">Tools and technologies I have worked with or studied.</p></div>
+      <div class="card reveal">
+        <h3>Programming</h3><div class="skill-list"><span class="skill">Python</span><span class="skill">Java</span></div>
+        <h3>Web &amp; Backend</h3><div class="skill-list"><span class="skill">HTML</span><span class="skill">CSS</span><span class="skill">JavaScript</span><span class="skill">Flask</span></div>
+        <h3>Computer Vision &amp; AI/ML</h3><div class="skill-list"><span class="skill">YOLOv8</span><span class="skill">EasyOCR</span><span class="skill">Machine Learning (Basics)</span></div>
+        <h3>Databases &amp; Tools</h3><div class="skill-list"><span class="skill">MySQL</span><span class="skill">Firebase (Basics)</span><span class="skill">Git</span><span class="skill">GitHub</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-head reveal"><div class="kicker">Selected work</div><h2>Projects that solve problems</h2><p class="section-intro">A look at projects described in my resume.</p></div>
+      <div class="project-grid">
+        <article class="card project reveal" style="--glow:#55e6ff">
+          <div class="project-top"><div class="card-icon">🚦</div><span class="project-number">PROJECT / 01</span></div>
+          <h3>Traffic Violation Detection System</h3>
+          <p>Developed an AI-based application using Python, YOLOv8, EasyOCR, and Flask to detect traffic violations and recognize vehicle number plates. Implemented video-based detection, violation identification, evidence capture, fine-calculation logic, and dashboard/reporting concepts.</p>
+          <div class="pills"><span class="pill">Python</span><span class="pill">YOLOv8</span><span class="pill">EasyOCR</span><span class="pill">Flask</span><span class="pill">Computer Vision</span></div>
+        </article>
+        <article class="card project reveal" style="--glow:#ff5ca8">
+          <div class="project-top"><div class="card-icon">🔎</div><span class="project-number">PROJECT / 02</span></div>
+          <h3>Lost &amp; Found Digital Board</h3>
+          <p>Developed a web application to report, search, and track lost or found items using HTML, CSS, JavaScript, and Firebase. Designed a simple reporting and retrieval workflow focused on practical data management and user interaction.</p>
+          <div class="pills"><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span><span class="pill">Firebase</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <div class="section-head reveal"><div class="kicker">Learning journey</div><h2>Education &amp; activities</h2></div>
+      <div class="card reveal timeline">
+        <div class="timeline-item"><div class="timeline-date">2024 – 2028</div><div><h3>B.Tech — Computer Science Engineering (AI &amp; ML)</h3><p>Gouthami Institute of Technology and Management for Women · CGPA: 7.0</p></div></div>
+        <div class="timeline-item"><div class="timeline-date">Intermediate</div><div><h3>MPC</h3><p>Suvarna Bharathi Junior College · 92%</p></div></div>
+        <div class="timeline-item"><div class="timeline-date">SSC</div><div><h3>Secondary School Certificate</h3><p>Kasthurba Gandhi Balikala Vidhyalayam · 72.6%</p></div></div>
+      </div>
+      <div class="grid" style="margin-top:18px">
+        <article class="card reveal"><div class="card-icon">🎤</div><h3>NEXUS</h3><p>Participated in NEXUS Paper Presentation.</p></article>
+        <article class="card reveal"><div class="card-icon">🛡️</div><h3>Cybersecurity</h3><p>Completed a workshop on Ethical Hacking and Cybersecurity.</p></article>
+        <article class="card reveal"><div class="card-icon">🌐</div><h3>Languages</h3><p>English · Telugu · Hindi</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-panel reveal">
+        <div><div class="kicker">Let's connect</div><h2>Have an opportunity<br><span class="gradient">or an idea?</span></h2><p class="section-intro">I’m interested in learning, collaborating, and exploring software engineering internship opportunities.</p><div class="actions"><a class="btn primary" href="mailto:vishnupriyasalla10.n@gmail.com">Email me ↗</a><button class="btn secondary" id="copyEmail" type="button">Copy email</button></div><p id="copyStatus" role="status" aria-live="polite" style="color:var(--cyan);font-size:.9rem"></p></div>
+        <div class="contact-links">
+          <a class="contact-link" href="mailto:vishnupriyasalla10.n@gmail.com">✉️ &nbsp; vishnupriyasalla10.n@gmail.com</a>
+          <a class="contact-link" href="tel:+919381182909">📱 &nbsp; +91 9381182909</a>
+          <a class="contact-link" href="https://linkedin.com/in/salla-vishnu-priya-488127395" target="_blank" rel="noopener noreferrer">🔗 &nbsp; LinkedIn profile ↗</a>
+          <a class="contact-link" href="https://github.com/vishnupriyasalla10n-dev" target="_blank" rel="noopener noreferrer">💻 &nbsp; GitHub profile ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="container footer-inner"><span>© <span id="year"></span> Vishnupriya Salla</span><span>Designed with curiosity &amp; a little gradient ✦</span><a href="#home">Back to top ↑</a></div></footer>
+<button id="topBtn" aria-label="Back to top">↑</button>
+<script>
+const menuBtn=document.getElementById('menuBtn');
+const navLinks=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});
+navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));
+document.getElementById('year').textContent=new Date().getFullYear();
+const topBtn=document.getElementById('topBtn');
+window.addEventListener('scroll',()=>{topBtn.style.display=window.scrollY>450?'block':'none';},{passive:true});
+topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.getElementById('copyEmail').addEventListener('click',async()=>{const status=document.getElementById('copyStatus');try{await navigator.clipboard.writeText('vishnupriyasalla10.n@gmail.com');status.textContent='Email copied to clipboard!';}catch(e){status.textContent='Please copy: vishnupriyasalla10.n@gmail.com';}});
+</script>
+</body>
+</html>
